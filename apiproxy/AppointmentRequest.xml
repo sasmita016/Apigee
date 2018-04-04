@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="8" name="AppointmentRequest">
+    <Basepaths>/appointmentrequest</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1517946494451</CreatedAt>
+    <CreatedBy>sbhuyan@miraclesoft.com</CreatedBy>
+    <Description></Description>
+    <DisplayName>AppointmentRequest</DisplayName>
+    <LastModifiedAt>1517946494451</LastModifiedAt>
+    <LastModifiedBy>sbhuyan@miraclesoft.com</LastModifiedBy>
+    <Policies>
+        <Policy>AssignMessage-GenerateResponse</Policy>
+        <Policy>JavaScript-SetResponse</Policy>
+        <Policy>JavaScript-getPhoneNo</Policy>
+        <Policy>LookupCache-getAppointment</Policy>
+        <Policy>PopulateCache-InsertAppointment</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>jsc://GetPhoneNo.js</Resource>
+        <Resource>jsc://SetResponse.js</Resource>
+    </Resources>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints/>
+    <validate>true</validate>
+</APIProxy>

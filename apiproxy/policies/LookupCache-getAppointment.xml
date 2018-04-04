@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<LookupCache async="false" continueOnError="false" enabled="true" name="LookupCache-getAppointment">
+    <DisplayName>LookupCache-getAppointment</DisplayName>
+    <Properties/>
+    <CacheKey>
+        <!--<KeyFragment>orderId</KeyFragment>-->
+        <KeyFragment ref="PhoneNumber"/>
+    </CacheKey>
+    <CacheResource>Appointment</CacheResource>
+    <Scope>Exclusive</Scope>
+    <AssignTo>AppointmentCache</AssignTo>
+</LookupCache>
