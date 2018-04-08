@@ -23,7 +23,24 @@
     <properties>
             <main.basedir>${project.basedir}</main.basedir>
     </properties>
-
+ <profiles>
+        <profile>
+            <id>test</id>
+            <properties>
+                <org>snehansu</org>  <!-- default org, replace with default org to avoid passing parameter e.g. -Dorg testmyapi -->
+                <apigee.profile>test</apigee.profile>
+                <apigee.env>test</apigee.env>
+                <apigee.hosturl>https://api.enterprise.apigee.com</apigee.hosturl>
+                <apigee.apiversion>v1</apigee.apiversion>
+                <apigee.org>snehansu</apigee.org>
+                <apigee.username>${username}</apigee.username>
+                <apigee.password>${password}</apigee.password>
+                <apigee.revision>1.0</apigee.revision> <!-- used while trying to update revision, use when option=update only -->
+                <apigee.override.delay>10</apigee.override.delay>
+                <apigee.delay>1000</apigee.delay>
+            </properties>
+        </profile>
+       </profiles>
     <build>
         <plugins>
             <plugin>
@@ -78,56 +95,4 @@
         </plugins>
     </build>
 <!-- This is where you add the environment specific properties under various profile names -->
- <profiles>
-        <profile>
-            <id>test</id>
-            <properties>
-                <org>snehansu</org>  <!-- default org, replace with default org to avoid passing parameter e.g. -Dorg testmyapi -->
-                <options>validate</options>  <!-- default org, replace with default org to avoid passing parameter e.g. -Dorg testmyapi -->
-                <apigee.profile>test</apigee.profile>
-                <apigee.env>test</apigee.env>
-                <apigee.hosturl>https://api.enterprise.apigee.com</apigee.hosturl>
-                <apigee.apiversion>v1</apigee.apiversion>
-                <apigee.org>snehansu</apigee.org>
-                <apigee.username>${username}</apigee.username>
-                <apigee.password>${password}</apigee.password>
-                <apigee.options>${options}</apigee.options>
-                <apigee.revision>${revision}</apigee.revision> <!-- used while trying to update revision, use when option=update only -->
-                <apigee.tokenurl>${tokenurl}</apigee.tokenurl> <!-- optional: oauth -->
-                <apigee.mfatoken>${mfatoken}</apigee.mfatoken> <!-- optional: mfa -->
-                <apigee.authtype>${authtype}</apigee.authtype> <!-- optional: oauth|basic(default) -->
-                <apigee.bearer>${bearer}</apigee.bearer> <!-- optional: Bearer token override -->
-                <apigee.refresh>${refresh}</apigee.refresh> <!-- optional: Refresh token override -->
-                <apigee.clientid>${clientId}</apigee.clientid> <!-- optional: Oauth Client Id - Default is edgecli-->
-                <apigee.clientsecret>${clientSecret}</apigee.clientsecret> <!-- optional: Oauth Client Secret Default is edgeclisecret-->
-                <!--apigee.override.delay>10</apigee.override.delay-->
-                <!--apigee.delay>1000</apigee.delay-->
-            </properties>
-        </profile>
-        <profile>
-            <id>prod</id>
-            <properties>
-                <org>testmyapi</org>  <!-- default org, replace with default org to avoid passing parameter e.g. -Dorg testmyapi -->
-                <options>validate</options>  <!-- default org, replace with default org to avoid passing parameter e.g. -Dorg testmyapi -->
-                <apigee.profile>prod</apigee.profile>
-                <apigee.env>prod</apigee.env>
-                <apigee.hosturl>https://api.enterprise.apigee.com</apigee.hosturl>
-                <apigee.apiversion>v1</apigee.apiversion>
-                <apigee.org>${org}</apigee.org>
-                <apigee.username>${username}</apigee.username>
-                <apigee.password>${password}</apigee.password>
-                <apigee.options>${options}</apigee.options>
-                <apigee.revision>${revision}</apigee.revision> <!-- used while trying to update revision, use when option=update only -->
-                <apigee.tokenurl>${tokenurl}</apigee.tokenurl> <!-- optional: oauth -->
-                <apigee.mfatoken>${mfatoken}</apigee.mfatoken> <!-- optional: mfa -->
-                <apigee.authtype>${authtype}</apigee.authtype> <!-- optional: oauth|basic(default) -->
-                <apigee.bearer>${bearer}</apigee.bearer> <!-- optional: Bearer token override -->
-                <apigee.refresh>${refresh}</apigee.refresh> <!-- optional: Refresh token override -->
-                <apigee.clientid>${clientId}</apigee.clientid> <!-- optional: Oauth Client Id - Default is edgecli-->
-                <apigee.clientsecret>${clientSecret}</apigee.clientsecret> <!-- optional: Oauth Client Secret Default is edgeclisecret-->
-                <!--apigee.override.delay>10</apigee.override.delay-->
-                <!--apigee.delay>1000</apigee.delay-->
-            </properties>
-        </profile>
-    </profiles>
 </project>
