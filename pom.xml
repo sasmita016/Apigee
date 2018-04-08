@@ -5,7 +5,7 @@
     <groupId>apigee</groupId>
     <artifactId>AppointmentRequest</artifactId>
     <packaging>pom</packaging>
-    <version>1</version>
+    <version>1.0</version>
     <name>AppointmentRequest</name>
     <pluginRepositories>
         <pluginRepository>
