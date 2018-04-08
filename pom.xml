@@ -91,7 +91,6 @@
                         <id>deploy-bundle</id>
                         <phase>install</phase>
                         <goals>
-                            <goal>deploy</goal>
                         </goals>
                     </execution>
                 </executions>
