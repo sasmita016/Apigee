@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>apigee</groupId>
-    <artifactId>parent-pom</artifactId>
+    <artifactId>AppointmentRequest</artifactId>
     <packaging>pom</packaging>
     <version>1.0</version>
     <pluginRepositories>
@@ -88,7 +88,7 @@
                 <apigee.env>test</apigee.env>
                 <apigee.hosturl>https://api.enterprise.apigee.com</apigee.hosturl>
                 <apigee.apiversion>v1</apigee.apiversion>
-                <apigee.org>${org}</apigee.org>
+                <apigee.org>snehansu</apigee.org>
                 <apigee.username>${username}</apigee.username>
                 <apigee.password>${password}</apigee.password>
                 <apigee.options>${options}</apigee.options>
