@@ -58,7 +58,7 @@
                 <version>2.6</version>
                 <executions>
                     <execution>
-                        <phase>copy-resources</phase>
+                        <id>copy-resources</id>
                         <phase>process-resources</phase>
                         <goals>
                             <goal>copy-resources</goal>
