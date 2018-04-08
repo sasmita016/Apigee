@@ -85,7 +85,6 @@
                         <id>configure-bundle</id>
                         <phase>package</phase>
                         <goals>
-                            <goal>deploy</goal>
                         </goals>
                     </execution>
                     <execution>
