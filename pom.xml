@@ -6,6 +6,7 @@
     <artifactId>AppointmentRequest</artifactId>
     <packaging>pom</packaging>
     <version>1.0</version>
+    <name>AppointmentRequest</name>
     <pluginRepositories>
         <pluginRepository>
             <id>central</id>
@@ -21,13 +22,17 @@
         </pluginRepository>
     </pluginRepositories>
     <properties>
-            <main.basedir>${project.basedir}</main.basedir>
+            <project.root.dir>${basedir}</project.root.dir>
+             <target.root.dir>${basedir}/target</target.root.dir>
+             <deployment.suffix>${user.name}</deployment.suffix>
+             <deployment.env>-${env}</deployment.env>
+             <commit></commit>
     </properties>
  <profiles>
         <profile>
             <id>test</id>
             <properties>
-                <org>snehansu</org>  <!-- default org, replace with default org to avoid passing parameter e.g. -Dorg testmyapi -->
+              <!-- default org, replace with default org to avoid passing parameter e.g. -Dorg testmyapi -->
                 <apigee.profile>test</apigee.profile>
                 <apigee.env>test</apigee.env>
                 <apigee.hosturl>https://api.enterprise.apigee.com</apigee.hosturl>
@@ -53,20 +58,20 @@
                 <version>2.6</version>
                 <executions>
                     <execution>
-                        <phase>package</phase>
+                        <phase>copy-resources</phase>
+                        <phase>process-resources</phase>
                         <goals>
                             <goal>copy-resources</goal>
                         </goals>
                         <configuration>
                             <overwrite>true</overwrite>
-                            <encoding>UTF-8</encoding>
-                             <echo message="basedir parent : ${basedir}"/>
-                            <outputDirectory>${basedir}/target/apiproxy</outputDirectory>
-                            <resources>
+                             <resources>
                                 <resource>
-                                    <directory>apiproxy</directory>
+                                    <directory>${project.root.dir}</directory>
+                                         <filtering>true</filtering>
                                 </resource>
                             </resources>
+                                 <outputDirectory>${target.root.dir}</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
@@ -76,7 +81,13 @@
                 <artifactId>apigee-edge-maven-plugin</artifactId>
                 <version>1.1.6</version>
                 <executions>
-  
+                    <execution>
+                        <id>configure-bundle</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>configure</goal>
+                        </goals>
+                    </execution>
                     <execution>
                         <id>deploy-bundle</id>
                         <phase>install</phase>
