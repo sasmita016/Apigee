@@ -76,13 +76,13 @@
                 <artifactId>apigee-edge-maven-plugin</artifactId>
                 <version>1.1.6</version>
                 <executions>
-                    <execution>
+                    <--execution>
                         <id>configure-bundle</id>
                         <phase>package</phase>
                         <goals>
                             <goal>configure</goal>
                         </goals>
-                    </execution>
+                    </execution-->
                     <execution>
                         <id>deploy-bundle</id>
                         <phase>install</phase>
